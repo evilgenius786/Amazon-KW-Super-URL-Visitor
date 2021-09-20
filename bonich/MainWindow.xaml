@@ -1,0 +1,41 @@
+﻿<Window x:Class="bonich.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Keyword index position" 
+        Height="650" Width="1000">
+    <Grid Background="#232F3F">
+        <Grid Margin="10" Background="#131921">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="120"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Margin="-30,-80,0,-60" Source="/img/bonich.png" Grid.Row="0" HorizontalAlignment="Left"></Image>
+            <!--<TextBlock Text="Amazon search volume generator" Foreground="#F2941B" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Calibri" FontWeight="Bold" FontSize="20"/>-->
+            <Image Margin="10" Source="/img/amazon.png" Grid.Row="0" HorizontalAlignment="Right"></Image>
+            <Button x:Name="btn_start" Background="Transparent" BorderBrush="#F2941B" Foreground="White" Content="Start" HorizontalAlignment="Right"  Grid.Row="1" VerticalAlignment="Bottom" Margin="10" Width="74" Click="Start"/>
+            <TextBlock Height="25" Width="160" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Margin="10" FontSize="15" Text="Change URL after every" Foreground="White"></TextBlock>
+            <TextBox Height="23" Name="time" Text="10" FontSize="15" Background="Transparent" BorderBrush="#F2941B" Foreground="White" Width="40" Margin="170,10,10,10" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+            <TextBlock Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Margin="220,10,10,10" FontSize="15" Text="seconds." Foreground="White"></TextBlock>
+
+            <TextBlock Height="25" Width="37" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="1" Margin="0,10,223.2,0" FontSize="15" Text="Wait" Foreground="White"></TextBlock>
+            <TextBox Height="23" Name="loop" Text="10" FontSize="15" Background="Transparent" BorderBrush="#F2941B" Foreground="White" Width="40" Margin="0,10,178.2,0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top"></TextBox>
+            <TextBlock Height="25" Width="163" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="1" Margin="0,10,10.2,0" FontSize="15" Text="minutes after each loop." Foreground="White"></TextBlock>
+
+            <ProgressBar Value="1" Name="pb" Background="Transparent" BorderBrush="#F2941B" Foreground="#F2941B" Height="25" Margin="10,50,10,10" Grid.Row="1" VerticalAlignment="Top"/>
+            <TextBlock x:Name="status" HorizontalAlignment="Left" Margin="10" Grid.Row="1" VerticalAlignment="Bottom" Foreground="White"/>
+            <DataGrid Background="LightGray" RowBackground="#FFF2BE7C" AlternatingRowBackground="#FFF0D4B2"  Margin="10" Grid.Row="2" IsReadOnly="True" CanUserSortColumns="False" x:Name="dataGrid" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Keyword" Binding="{Binding Keyword}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Super URL"  Binding="{Binding URL}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Text="Developed by: https://www.fiverr.com/muhammadhassan7"></TextBlock>
+        </Grid>
+    </Grid>
+</Window>
